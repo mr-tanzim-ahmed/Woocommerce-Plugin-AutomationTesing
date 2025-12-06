@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+
+<suite name="All Test Suite">
+    <listeners>
+        <listener class-name="WooCommerce.Report.TestListener"/>
+    </listeners>
+
+    <test name="Test Cases" preserve-order="true">
+        <classes>
+
+
+            <!-- Test Case 8: Rows Per Page and Table Height Customization -->
+            <class name="WooCommerce.TestCases.AdminLoginPageTest"/>
+            <class name="WooCommerce.TestCases.EndToEndCheckoutFlowTest"/>
+
+        </classes>
+    </test>
+
+</suite>

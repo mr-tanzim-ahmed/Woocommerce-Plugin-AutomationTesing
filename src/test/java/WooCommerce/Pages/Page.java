@@ -1,6 +1,6 @@
 package WooCommerce.Pages;
 
-import FlexTablePlugin.Util.FlexTablePluginUtil;
+import WooCommerce.Util.FlexTablePluginUtil;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -42,17 +42,16 @@ public abstract class Page {
 
     public abstract String getCurrentPageURL();
 
-    public abstract String homePageUrl(String url);
 
     public abstract void goToTargetPage(String url);
 
-    //public abstract String visitPage(String url);
+
     public abstract String getCssAttribute(By selector,String cssPropertyName);
 
     public abstract void openNewTabAndVisit(String url);
 
     public abstract void waitForElementToBeVisible(By selector);
-    //Returns an obj of any class that is extended by BasePage
+
     public static <T extends BasePage>T goTo(Class<T> pageClass){
         try {
             return pageClass.getDeclaredConstructor(WebDriver.class).newInstance(driver);

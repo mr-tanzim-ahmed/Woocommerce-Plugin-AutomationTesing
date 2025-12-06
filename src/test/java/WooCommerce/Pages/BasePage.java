@@ -73,7 +73,7 @@ public class BasePage extends Page {
 
     @Override
     public Select selectElement(By selector) {
-        waitForElementToBeClickable(selector);
+
         return new Select(getWebElement(selector));
     }
 
@@ -112,14 +112,6 @@ public class BasePage extends Page {
         wait.until(ExpectedConditions.visibilityOf(getWebElement(selector)));
     }
 
-    public void waitForElementToBeClickable(By selector) {
-        wait.until(ExpectedConditions.elementToBeClickable(selector));
-    }
-
-    @Override
-    public String homePageUrl(String url) {
-        return url.trim();
-    }
 
     @Override
     public void openNewTabAndVisit(String url) {
@@ -130,10 +122,6 @@ public class BasePage extends Page {
 
     public String getCssAttribute(By selector, String cssPropertyName) {
         return getWebElement(selector).getCssValue(cssPropertyName);
-    }
-
-    public String getCssClassValue(By selector) {
-        return getWebElement(selector).getAttribute("class");
     }
 
     public void addInfo(String message) {
