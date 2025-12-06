@@ -8,12 +8,12 @@ public class AdminLoginPage extends BasePage{
     public AdminLoginPage(WebDriver driver){
         super(driver);
     }
-    public AdminLoginPage enterUserNameOrEmail(String userNameOrEmail){
+    public AdminLoginPage enterAdminUserNameOrEmail(String userNameOrEmail){
         clearInputText(By.id("user_login"));
         setInput(By.id("user_login"),userNameOrEmail);
         return this;
     }
-    public AdminLoginPage enterPassword(String password){
+    public AdminLoginPage enterAdminPassword(String password){
         setInput(By.cssSelector("#user_pass"),password);
         setLoadingTime(1);
         return this;
@@ -34,8 +34,8 @@ public class AdminLoginPage extends BasePage{
     }
 
     public DashboardPage doLogin(String userNameOrEmail, String password){
-        enterUserNameOrEmail(userNameOrEmail);
-        enterPassword(password);
+        enterAdminUserNameOrEmail(userNameOrEmail);
+        enterAdminPassword(password);
         clickLoginButton();
         return goTo(DashboardPage.class);
     }

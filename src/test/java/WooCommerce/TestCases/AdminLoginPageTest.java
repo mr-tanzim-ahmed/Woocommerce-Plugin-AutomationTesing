@@ -20,8 +20,8 @@ public class AdminLoginPageTest extends BaseTest {
     @Test(priority = 2)
     public void loginShouldSucceed(){
         DashboardPage dashboardPage = page.goTo(AdminLoginPage.class)
-                .enterUserNameOrEmail(EnvManager.userName())
-                .enterPassword(EnvManager.password())
+                .enterAdminUserNameOrEmail(EnvManager.userName())
+                .enterAdminPassword(EnvManager.password())
                 .clickPasswordVisibility()
                 .checkRememberMe()
                 .clickLoginButton();

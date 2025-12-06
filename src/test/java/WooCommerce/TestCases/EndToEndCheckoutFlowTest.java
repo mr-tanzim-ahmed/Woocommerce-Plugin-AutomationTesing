@@ -6,9 +6,13 @@ import config.EnvManager;
 import org.testng.annotations.Test;
 
 public class EndToEndCheckoutFlowTest extends BaseTest {
+    @Test
+    public void testEndToEndCheckoutFlow() {
+        //Sorry tomorrow Operating System Lab final, cant not complete right now!
+    }
 
-    @Test()
-    public void validatePaymentProcessedSuccessfully(){
+    @Test
+    public void verifyCompleteCheckoutProcess(){
         DashboardPage testPage = page.goTo(AdminLoginPage.class)
                 .doLogin(EnvManager.userName(),EnvManager.password())
                 .goTo(DashboardPage.class);
@@ -32,6 +36,14 @@ public class EndToEndCheckoutFlowTest extends BaseTest {
 
 
     }
+    @Test
+    public void validateCheckoutFlowWithPayment() {
+
+    }
+    @Test
+    public void checkoutFlow_EndToEndValidation() { }
+
+
 
 
 
