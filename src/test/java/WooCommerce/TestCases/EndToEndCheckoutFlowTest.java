@@ -30,6 +30,7 @@ public class EndToEndCheckoutFlowTest extends BaseTest {
                         .selectCashOnDelivery()
                         .clickPlaceOrder();
 
+
     }
 
 
