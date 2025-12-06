@@ -1,4 +1,4 @@
-package java.FlexTablePlugin.Util;
+package WooCommerce.Util;
 
 public class FlexTablePluginUtil {
 

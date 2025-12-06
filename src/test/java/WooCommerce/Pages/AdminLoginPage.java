@@ -1,4 +1,4 @@
-package java.FlexTablePlugin.Pages;
+package WooCommerce.Pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -32,10 +32,7 @@ public class AdminLoginPage extends BasePage{
         clickElement(By.cssSelector("#wp-submit"));
         return goTo(DashboardPage.class);
     }
-    public LostPasswordPage clickLostPassword(){
-        clickElement(By.cssSelector("#wp-submit"));
-        return goTo(LostPasswordPage.class);
-    }
+
     public DashboardPage doLogin(String userNameOrEmail, String password){
         enterUserNameOrEmail(userNameOrEmail);
         enterPassword(password);

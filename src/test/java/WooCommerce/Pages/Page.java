@@ -1,4 +1,4 @@
-package java.FlexTablePlugin.Pages;
+package WooCommerce.Pages;
 
 import FlexTablePlugin.Util.FlexTablePluginUtil;
 import org.openqa.selenium.By;

@@ -1,6 +1,6 @@
-package java.FlexTablePlugin.Pages;
+package WooCommerce.Pages;
 
-import FlexTablePlugin.Report.*;
+
 import com.aventstack.extentreports.Status;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -9,6 +9,7 @@ import org.openqa.selenium.WindowType;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 
+import WooCommerce.Report.ReportTestManager;
 import java.util.ArrayList;
 import java.util.List;
 

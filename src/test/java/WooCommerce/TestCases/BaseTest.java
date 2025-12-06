@@ -1,15 +1,16 @@
-package java.FlexTablePlugin.TestCases;
+package WooCommerce.TestCases;
 
-import FlexTablePlugin.Pages.BasePage;
-import FlexTablePlugin.Pages.Page;
-import FlexTablePlugin.Util.FlexTablePluginUtil;
-import config.EnvManager;
+
 import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.*;
 
+import WooCommerce.Pages.BasePage;
+import WooCommerce.Pages.Page;
+import WooCommerce.Util.FlexTablePluginUtil;
+import config.EnvManager;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;

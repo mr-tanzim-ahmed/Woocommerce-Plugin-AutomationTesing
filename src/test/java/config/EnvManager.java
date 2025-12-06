@@ -1,4 +1,4 @@
-package java.config;
+package config;
 
 import io.github.cdimascio.dotenv.Dotenv;
 
