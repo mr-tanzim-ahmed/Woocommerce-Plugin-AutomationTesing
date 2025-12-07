@@ -77,7 +77,7 @@ Follow the steps below to prepare a fully functional test store:
       - Go to **Users → Add New**
       - Username: `test_customer`
       - Email: `testcustomer@example.com`
-      - Role: **Subscriber** (or **Customer** if available)
+      - Role: **Customer**
       - Set a strong password
       - Click **Add New User**
 14. **Verify Customer Order Flow:**
