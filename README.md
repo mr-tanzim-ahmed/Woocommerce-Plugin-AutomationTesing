@@ -176,3 +176,10 @@ The automation suite is integrated with **GitHub Actions**. Here's the workflow 
 4. **Build Project:** Compiles the project using Gradle.
 5. **Run Tests:** Executes the TestNG suite and generates **Extent Reports**.
 6. **Serve Report (Optional):** Extent Reports can be served locally via a simple HTTP server for review.
+
+## Testing report:
+<pre> <code> 
+build
+  ├── extendReportForWooCommerce
+              └── Report.html
+</code> </pre>
