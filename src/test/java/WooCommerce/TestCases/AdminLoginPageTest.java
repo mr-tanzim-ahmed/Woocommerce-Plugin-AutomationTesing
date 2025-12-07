@@ -14,14 +14,14 @@ public class AdminLoginPageTest extends BaseTest {
     public void checkLoginPageUrl(){
         AdminLoginPage login = page.goTo(AdminLoginPage.class);
         String loginPageUrl = login.getCurrentPageURL();
-        Assert.assertTrue(loginPageUrl.contains(EnvManager.adminPageUrl()));
+        Assert.assertTrue(loginPageUrl.contains(EnvManager.loginPageUrl()));
     }
 
     @Test(priority = 2)
     public void loginShouldSucceed(){
         DashboardPage dashboardPage = page.goTo(AdminLoginPage.class)
-                .enterAdminUserNameOrEmail(EnvManager.userName())
-                .enterAdminPassword(EnvManager.password())
+                .enterAdminUserNameOrEmail(EnvManager.adminUserName())
+                .enterAdminPassword(EnvManager.adminUserPassword())
                 .clickPasswordVisibility()
                 .checkRememberMe()
                 .clickLoginButton();

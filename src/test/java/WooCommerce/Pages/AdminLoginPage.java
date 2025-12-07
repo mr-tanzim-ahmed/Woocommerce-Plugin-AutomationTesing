@@ -33,7 +33,7 @@ public class AdminLoginPage extends BasePage{
         return goTo(DashboardPage.class);
     }
 
-    public DashboardPage doLogin(String userNameOrEmail, String password){
+    public DashboardPage doAdminLogin(String userNameOrEmail, String password){
         enterAdminUserNameOrEmail(userNameOrEmail);
         enterAdminPassword(password);
         clickLoginButton();

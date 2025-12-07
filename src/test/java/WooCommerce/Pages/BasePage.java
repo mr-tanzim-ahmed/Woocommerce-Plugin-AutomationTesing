@@ -123,6 +123,10 @@ public class BasePage extends Page {
     public String getCssAttribute(By selector, String cssPropertyName) {
         return getWebElement(selector).getCssValue(cssPropertyName);
     }
+    public MyAccountPage clickUserAccount(){
+        clickElement(By.cssSelector("a[aria-label='Account icon link']"));
+        return goTo(MyAccountPage.class);
+    }
 
     public void addInfo(String message) {
         if (ReportTestManager.getTest() != null) {

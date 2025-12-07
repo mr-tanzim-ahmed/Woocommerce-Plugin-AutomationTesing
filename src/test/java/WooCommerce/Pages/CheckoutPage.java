@@ -84,9 +84,10 @@ public class CheckoutPage extends BasePage {
         return this;
     }
 
-    public OrderConfirmAndDetailPage clickPlaceOrder() {
+    public OrderReceivedPage clickPlaceOrder() {
         waitForElementToBeVisible(By.cssSelector("#place_order"));
+        setLoadingTime(1);
         clickElement(By.cssSelector("#place_order"));
-        return goTo(OrderConfirmAndDetailPage.class);
+        return goTo(OrderReceivedPage.class);
     }
 }

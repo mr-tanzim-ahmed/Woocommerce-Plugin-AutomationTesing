@@ -12,12 +12,12 @@ public class EndToEndCheckoutFlowTest extends BaseTest {
     }
 
     @Test
-    public void verifyCompleteCheckoutProcess(){
+    public void verifyPaymentProcessedSuccessfully(){
         DashboardPage testPage = page.goTo(AdminLoginPage.class)
-                .doLogin(EnvManager.userName(),EnvManager.password())
+                .doAdminLogin(EnvManager.adminUserName(),EnvManager.adminUserPassword())
                 .goTo(DashboardPage.class);
-                testPage.goToTargetPage(properties.getProperty("homePageURL"));
-                OrderConfirmAndDetailPage orderConfirmPage = page.goTo(HomePage.class)
+                testPage.goToTargetPage(EnvManager.homePageUrl());
+                OrderReceivedPage orderConfirmPage = page.goTo(HomePage.class)
                         .selectAprocuct()
                         .clickAddToCart()
                         .clickViewCart()

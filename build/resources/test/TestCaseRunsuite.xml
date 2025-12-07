@@ -11,8 +11,8 @@
 
 
             <!-- Test Case 8: Rows Per Page and Table Height Customization -->
-            <class name="WooCommerce.TestCases.AdminLoginPageTest"/>
-            <class name="WooCommerce.TestCases.EndToEndCheckoutFlowTest"/>
+
+            <class name="WooCommerce.TestCases.MyAccountPageTest"/>
 
         </classes>
     </test>

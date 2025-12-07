@@ -33,26 +33,36 @@ public class EnvManager {
         return dotenv.get(key);
     }
     // Optional: dedicated methods
+    public static String adminUserName() {
+
+        return get("adminUserName");
+    }
+
+    public static String adminUserPassword() {
+
+        return get("adminPassword");
+    }
+
     public static String userName() {
 
         return get("userName");
     }
 
-    public static String password() {
+    public static String userPassword() {
 
-        return get("password");
+        return get("userPassword");
     }
 
-    public static String adminPageUrl(){
-        return get("adminLoginURL");
-    }
+    public static String loginPageUrl(){
 
-    public static String googleSheetURL() {
-        return get("googleSheetURL");
+        return get("loginURL");
     }
+    public static String homePageUrl(){
 
-    public static String googleSheetUrlCSVFormat() {
-        return get("googleSheetUrlCSVFormat");
+        return get("homePageURL");
+    }
+    public static String orderNumber(){
+        return get("userOrderNumber");
     }
 
 }

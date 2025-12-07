@@ -1,6 +1,5 @@
 package WooCommerce.TestCases;
 
-
 import io.github.cdimascio.dotenv.Dotenv;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,67 +10,49 @@ import WooCommerce.Pages.BasePage;
 import WooCommerce.Pages.Page;
 import WooCommerce.Util.FlexTablePluginUtil;
 import config.EnvManager;
-import java.io.FileInputStream;
-import java.io.IOException;
+
 import java.time.Duration;
-import java.util.Properties;
+import java.util.ArrayList;
 
+public class BaseTest {
+    public WebDriver driver;
+    Page page;
+    protected static Dotenv dotenv;
 
-    public class BaseTest {
-        public WebDriver driver;
-        Page page;
-        public static Properties properties;
-        protected static Dotenv dotenv;
+    static {
+        dotenv = Dotenv.load();
+    }
 
-        public BaseTest() {
-            properties = new Properties();
-            dotenv = Dotenv.load();
-            String path = System.getProperty("user.dir") + "/src/test/resources/config.properties";
+    @BeforeClass
+    public void browserSetup() {
+        String browserName = dotenv.get("BROWSER", "chrome");
 
-            try {
-                FileInputStream inputStream = new FileInputStream(path);
-                properties.load(inputStream);
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
+        switch (browserName.toLowerCase()) {
+            case "firefox":
+                driver = new FirefoxDriver();
+                break;
+            case "chrome":
+                driver = new ChromeDriver();
+                break;
+            default:
+                throw new IllegalArgumentException("Unsupported browser! " + browserName);
         }
 
-        @BeforeClass
-        public void browserSetup() {
+        driver.manage().window().maximize();
+        driver.get(EnvManager.loginPageUrl());
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(FlexTablePluginUtil.WAIT_TIME));
 
-            String browserName = properties.getProperty("browser");
-            switch (browserName.toLowerCase()) {
+        page = new BasePage(driver);
+    }
 
-                case "firefox":
-                    driver = new FirefoxDriver();
-                    break;
-                case "chrome":
-                    driver = new ChromeDriver();
-                    break;
-                default:
-                    throw new IllegalArgumentException("Unsupported browser! " + browserName);
-            }
-            driver.manage().window().maximize();
-            driver.get(EnvManager.adminPageUrl());
-            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds( FlexTablePluginUtil.WAIT_TIME));
-
-            page = new BasePage(driver);
-        }
-
-        @AfterClass
-        public void closeBrowser() {
+    @AfterClass
+    public void closeBrowser() {
+        if (driver != null) {
             driver.quit();
         }
-
-        public String getUserNameOrEmail() {
-            return properties.getProperty("userName");
-        }
-
-        public String getPassword() {
-            return properties.getProperty("password");
-        }
-
-        public WebDriver getWebDriver() {
-            return driver;
-        }
     }
+
+    public WebDriver getWebDriver() {
+        return driver;
+    }
+}
