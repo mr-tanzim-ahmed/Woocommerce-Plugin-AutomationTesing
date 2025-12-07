@@ -20,7 +20,7 @@ public class ReportManager {
         if (extent == null) {
             String workingDir = System.getProperty("user.dir");
             String reportName = "Report.html";
-            path = "/build/extendReportForFlexTable/" + reportName;
+            path = "/build/extendReportForWooCommerce/" + reportName;
             ExtentSparkReporter htmlReporter = new ExtentSparkReporter(workingDir + path);
             htmlReporter.config().setTheme(Theme.STANDARD);
             htmlReporter.config().setDocumentTitle("Report");

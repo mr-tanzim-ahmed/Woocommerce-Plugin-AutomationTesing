@@ -42,7 +42,7 @@ public class UserAccountOrderHistory extends BaseTest {
         System.out.println("Expected Order Number: " + expectedOrderNumber);
         System.out.println("========================");
 
-        Assert.assertNotNull(frontendOrderNumber);
+        Assert.assertEquals(frontendOrderNumber,expectedOrderNumber);
 
         boolean orderMatches = frontendOrderNumber.contains(expectedOrderNumber);
         Assert.assertTrue(orderMatches);
@@ -53,7 +53,7 @@ public class UserAccountOrderHistory extends BaseTest {
         boolean historyComplete = userOrderPage.checkOrderHistoryAvailable();
         Assert.assertTrue(historyComplete);
 
-        DashboardPage dashboardPage = userOrderPage.goTo(AdminLoginPage.class)
+        DashboardPage dashboardPage = page.goTo(AdminLoginPage.class)
                 .doAdminLogin(EnvManager.adminUserName(), EnvManager.adminUserPassword());
 
         WooCommerceOrdersFromWordpressDashboard ordersPage = dashboardPage.goToWooCommerceOrders();
@@ -61,6 +61,6 @@ public class UserAccountOrderHistory extends BaseTest {
         boolean backendOrderExists = ordersPage.isOrderInBackend(expectedOrderNumber);
         Assert.assertTrue(backendOrderExists);
 
-        System.out.println("✓ Frontend and backend order details match");
+        System.out.println("Frontend and backend order details match");
     }
 }

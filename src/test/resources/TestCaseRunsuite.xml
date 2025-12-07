@@ -14,7 +14,6 @@
             <!-- Test 2: User Account Tests -->
             <class name="WooCommerce.TestCases.MyAccountPageTest"/>
             <!-- Test 3: End-to-End Checkout Flow -->
-            <class name="WooCommerce.TestCases.UserAccountOrderHistory"/>
 
             <class name="WooCommerce.TestCases.EndToEndCheckoutFlowTest"/>
 

@@ -21,14 +21,13 @@ dependencies {
 test {
     useTestNG() {
 
-        // Allow passing XML suite file from CLI or GitHub Actions
         if (project.hasProperty('suitePath')) {
             String suiteFile = project.property('suitePath').toString()
             println "➡ Running TestNG suite: $suiteFile"
             suites suiteFile
         } else {
             println "⚠ No suitePath provided. Running default regression suite..."
-            suites 'src/test/resources/regressionSuiteForFlexTablePluginWithReport.xml'
+            suites 'src/test/resources/TestCaseRunsuite.xml'
         }
     }
 

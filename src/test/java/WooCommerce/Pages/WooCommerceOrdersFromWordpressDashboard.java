@@ -12,7 +12,7 @@ public class WooCommerceOrdersFromWordpressDashboard extends BasePage {
     public WooCommerceOrdersFromWordpressDashboard goToOrders() {
         // click on WooCommerce menu then Orders
         clickElement(By.xpath("//li[@id='menu-posts-product']//a[contains(text(),'Orders')]"));
-        setLoadingTime(2);
+        setLoadingTime(1);
         return this;
     }
 
