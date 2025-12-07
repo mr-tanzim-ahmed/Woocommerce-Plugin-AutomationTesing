@@ -9,7 +9,9 @@ public class CartPage extends BasePage {
         super(driver);
     }
     public CheckoutPage clickProceedToCheckout(){
-        clickElement(By.cssSelector(".checkout-button.button.alt.wc-forward"));
+        waitForElementToBeVisible(By.xpath("a[class*='checkout-button']"));
+        setLoadingTime(2);
+        clickElement(By.cssSelector("a[class*='checkout-button']"));
         return goTo(CheckoutPage.class);
     }
 

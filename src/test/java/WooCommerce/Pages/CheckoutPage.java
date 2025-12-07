@@ -9,12 +9,10 @@ public class CheckoutPage extends BasePage {
         super(driver);
     }
 
-    // =========================
-    // BILLING DETAILS INPUT BOXES
-    // =========================
+
 
     public CheckoutPage enterFirstName(String firstName) {
-        setInput(By.cssSelector("#billing_first_name"), firstName);
+        setInput(By.xpath("//input[@id='billing_first_name']"), firstName);
         return this;
     }
 
@@ -28,7 +26,7 @@ public class CheckoutPage extends BasePage {
         return this;
     }
     public CheckoutPage selectCountry(String country){
-        selectElementFromVisibleText(By.cssSelector("span[aria-label='Country / Region']"),country);
+        selectElementFromVisibleText(By.xpath("//span[@aria-label='Country / Region']"),country);
         return this;
     }
 
@@ -48,7 +46,7 @@ public class CheckoutPage extends BasePage {
     }
 
     public CheckoutPage selectDistrict(String district) {
-        selectElementFromVisibleText(By.cssSelector("span[aria-label='District']"), district);
+        selectElementFromVisibleText(By.xpath("//span[@aria-label='District']"), district);
         return this;
     }
 

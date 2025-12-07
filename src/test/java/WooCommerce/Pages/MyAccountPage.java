@@ -16,8 +16,8 @@ public class MyAccountPage extends BasePage{
     }
 
     public MyAccountPage enterUserNameOrEmail(String userNameOrEmail){
-        clearInputText(By.id("user_login"));
-        setInput(By.id("user_login"), userNameOrEmail);
+        clearInputText(By.cssSelector("#user_login"));
+        setInput(By.cssSelector("#user_login"), userNameOrEmail);
         return this;
     }
 

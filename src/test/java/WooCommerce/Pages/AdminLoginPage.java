@@ -9,8 +9,8 @@ public class AdminLoginPage extends BasePage{
         super(driver);
     }
     public AdminLoginPage enterAdminUserNameOrEmail(String userNameOrEmail){
-        clearInputText(By.id("user_login"));
-        setInput(By.id("user_login"),userNameOrEmail);
+        clearInputText(By.cssSelector("#user_login"));
+        setInput(By.cssSelector("#user_login"),userNameOrEmail);
         return this;
     }
     public AdminLoginPage enterAdminPassword(String password){

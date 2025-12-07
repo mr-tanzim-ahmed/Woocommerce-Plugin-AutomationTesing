@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="All Test Suite">
+<suite name="WooCommerce Automation Test Suite">
     <listeners>
         <listener class-name="WooCommerce.Report.TestListener"/>
     </listeners>
 
-    <test name="Test Cases" preserve-order="true">
+    <test name="WooCommerce E-commerce Tests" preserve-order="true">
         <classes>
+            <!-- Test 1: Admin Login -->
+            <class name="WooCommerce.TestCases.AdminLoginPageTest"/>
 
-
-            <!-- Test Case 8: Rows Per Page and Table Height Customization -->
-
+            <!-- Test 2: User Account Tests -->
             <class name="WooCommerce.TestCases.MyAccountPageTest"/>
+            <!-- Test 3: End-to-End Checkout Flow -->
+            <class name="WooCommerce.TestCases.UserAccountOrderHistory"/>
+
+            <class name="WooCommerce.TestCases.EndToEndCheckoutFlowTest"/>
+
+            <!-- Test 4: Order History Validation -->
+            <class name="WooCommerce.TestCases.UserAccountOrderHistory"/>
+
 
         </classes>
     </test>
-
 </suite>

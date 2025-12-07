@@ -12,7 +12,6 @@ import WooCommerce.Util.FlexTablePluginUtil;
 import config.EnvManager;
 
 import java.time.Duration;
-import java.util.ArrayList;
 
 public class BaseTest {
     public WebDriver driver;

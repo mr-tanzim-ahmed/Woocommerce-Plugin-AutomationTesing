@@ -21,5 +21,10 @@ public class DashboardPage extends BasePage{
         return new HomePage(driver);
     }
 
+    public WooCommerceOrdersFromWordpressDashboard goToWooCommerceOrders() {
+        clickElement(By.xpath("//li[@id='menu-posts-product']//following-sibling::li//a[contains(text(),'Orders')] | //a[contains(@href,'edit.php?post_type=shop_order')]"));
+        return goTo(WooCommerceOrdersFromWordpressDashboard.class);
+    }
+
 
 }
